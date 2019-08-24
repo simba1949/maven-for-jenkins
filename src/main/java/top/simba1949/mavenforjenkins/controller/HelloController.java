@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author SIMBA1949
  * @date 2019/8/22 17:22
@@ -24,5 +27,15 @@ public class HelloController {
             log.error(MSG);
         }
         return MSG;
+    }
+
+    @GetMapping("list")
+    public List getList(){
+        List<String> list = new ArrayList<>(10);
+        list.add("君不见黄河之水天上来");
+        list.add("奔流到海不复回");
+        list.add("君不见高堂明镜悲白发");
+        list.add("朝如青丝暮成雪");
+        return list;
     }
 }
